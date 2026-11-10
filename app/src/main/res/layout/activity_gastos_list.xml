@@ -27,6 +27,13 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp" />
 
+        <TextView
+            android:id="@+id/tvAgitar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gastos_agitar"
+            android:textSize="12sp" />
+
         <ProgressBar
             android:id="@+id/progreso"
             style="?android:attr/progressBarStyleHorizontal"

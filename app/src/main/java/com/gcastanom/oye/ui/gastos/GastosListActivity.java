@@ -16,6 +16,7 @@ import com.gcastanom.oye.data.model.Gasto;
 import com.gcastanom.oye.data.model.Usuario;
 import com.gcastanom.oye.data.repository.GastoRepository;
 import com.gcastanom.oye.data.repository.Resultado;
+import com.gcastanom.oye.sensors.ShakeDetector;
 import com.gcastanom.oye.session.SessionManager;
 import com.gcastanom.oye.ui.Formato;
 import com.gcastanom.oye.ui.Pantalla;
@@ -28,6 +29,7 @@ import java.util.List;
  * Lista de gastos (equivale a Screen7 de Kodular).
  * GET /api/gastos al abrir y cada vez que se vuelve a esta pantalla;
  * al tocar un gasto se puede editar o eliminar (DELETE /api/gastos/{id}).
+ * Sensor acelerómetro: al agitar el celular se vuelve a pedir la lista.
  */
 public class GastosListActivity extends AppCompatActivity {
 
@@ -36,6 +38,7 @@ public class GastosListActivity extends AppCompatActivity {
     private ProgressBar progreso;
     private TextView tvResumen;
     private TextView tvVacio;
+    private ShakeDetector shakeDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,12 +62,25 @@ public class GastosListActivity extends AppCompatActivity {
 
         findViewById(R.id.btnNuevoGasto).setOnClickListener(
                 v -> startActivity(new Intent(this, GastoFormActivity.class)));
+
+        shakeDetector = new ShakeDetector(this, () -> {
+            Toast.makeText(this, R.string.gastos_actualizando, Toast.LENGTH_SHORT).show();
+            cargarGastos();
+        });
+        findViewById(R.id.tvAgitar).setVisibility(shakeDetector.disponible() ? View.VISIBLE : View.GONE);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        cargarGastos();   // se recarga al volver de crear o editar
+        cargarGastos();            // se recarga al volver de crear o editar
+        shakeDetector.iniciar();   // el acelerómetro escucha solo con la pantalla visible
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        shakeDetector.detener();
     }
 
     void cargarGastos() {
