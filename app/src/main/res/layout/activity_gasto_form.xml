@@ -95,7 +95,11 @@
             android:layout_marginTop="12dp"
             android:hint="@string/gasto_lugar"
             app:counterEnabled="true"
-            app:counterMaxLength="100">
+            app:counterMaxLength="100"
+            app:endIconContentDescription="@string/ubicacion_usar"
+            app:endIconDrawable="@drawable/ic_ubicacion"
+            app:endIconMode="custom"
+            app:helperTextEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etLugar"
