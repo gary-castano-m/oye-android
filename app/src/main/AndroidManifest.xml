@@ -33,6 +33,12 @@
             android:windowSoftInputMode="adjustResize" />
 
         <activity android:name=".ui.menu.MenuActivity" />
+
+        <activity android:name=".ui.gastos.GastosListActivity" />
+
+        <activity
+            android:name=".ui.gastos.GastoFormActivity"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
