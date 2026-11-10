@@ -12,7 +12,7 @@ import com.gcastanom.oye.data.remote.RetrofitClient;
 
 import okhttp3.ResponseBody;
 
-/** Peticiones públicas: despertar el servidor, login, registro y recuperar la clave. */
+/** Peticiones de acceso: despertar el servidor, login, registro, recuperar la clave y verificar la sesión. */
 public class AuthRepository {
 
     private final ApiService api;
@@ -35,5 +35,10 @@ public class AuthRepository {
 
     public void recuperarClave(String email, Resultado<Void> resultado) {
         api.recuperarClave(new ForgotPasswordRequest(email)).enqueue(new ApiCallback<>(resultado));
+    }
+
+    /** Pide GET /api/users/me con el token guardado: si responde, la sesión sigue viva. */
+    public void verificarSesion(Resultado<Usuario> resultado) {
+        api.miPerfil().enqueue(new ApiCallback<>(resultado));
     }
 }
