@@ -1,5 +1,6 @@
 package com.gcastanom.oye.ui.menu;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -12,6 +13,8 @@ import com.gcastanom.oye.data.model.Usuario;
 import com.gcastanom.oye.session.SessionManager;
 import com.gcastanom.oye.ui.Navegacion;
 import com.gcastanom.oye.ui.Pantalla;
+import com.gcastanom.oye.ui.gastos.GastoFormActivity;
+import com.gcastanom.oye.ui.gastos.GastosListActivity;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 /**
@@ -56,9 +59,12 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     private void configurarBotones() {
+        findViewById(R.id.btnRegistrarGasto).setOnClickListener(
+                v -> startActivity(new Intent(this, GastoFormActivity.class)));
+        findViewById(R.id.btnMisGastos).setOnClickListener(
+                v -> startActivity(new Intent(this, GastosListActivity.class)));
+
         // Estas opciones se conectan en las siguientes fases.
-        findViewById(R.id.btnRegistrarGasto).setOnClickListener(v -> proximamente());
-        findViewById(R.id.btnMisGastos).setOnClickListener(v -> proximamente());
         findViewById(R.id.btnReporteGastos).setOnClickListener(v -> proximamente());
         findViewById(R.id.btnPerfil).setOnClickListener(v -> proximamente());
         findViewById(R.id.btnUsuarios).setOnClickListener(v -> proximamente());
