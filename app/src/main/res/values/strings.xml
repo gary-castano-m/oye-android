@@ -86,4 +86,12 @@
     <string name="gasto_guardar">Guardar gasto</string>
     <string name="gasto_guardado">Gasto guardado. Total: %1$s</string>
     <string name="error_valor">Escribe un valor válido, sin puntos de miles (ej. 10000).</string>
+
+    <!-- Sensores -->
+    <string name="gastos_agitar">Agita el celular para actualizar la lista.</string>
+    <string name="gastos_actualizando">Actualizando la lista…</string>
+    <string name="ubicacion_usar">Usar mi ubicación</string>
+    <string name="ubicacion_buscando">Buscando tu ubicación…</string>
+    <string name="ubicacion_lista">Lugar tomado de tu ubicación. Puedes corregirlo.</string>
+    <string name="ubicacion_sin_permiso">Sin permiso de ubicación: escribe el lugar a mano.</string>
 </resources>
