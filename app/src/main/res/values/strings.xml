@@ -63,4 +63,27 @@
     <string name="rol_admin">Administrador</string>
     <string name="rol_reviewer">Revisor</string>
     <string name="rol_member">Miembro</string>
+    <!-- Gastos: lista -->
+    <string name="gastos_titulo">Gastos</string>
+    <string name="gastos_resumen">Gastos: %1$d · Total: %2$s</string>
+    <string name="gastos_vacio">Aún no hay gastos. Toca «Nuevo gasto» para registrar el primero.</string>
+    <string name="gastos_nuevo">Nuevo gasto</string>
+    <string name="gastos_editar">Editar</string>
+    <string name="gastos_eliminar">Eliminar</string>
+    <string name="gastos_eliminar_pregunta">¿Eliminar el gasto de %1$s por %2$s?</string>
+    <string name="gastos_eliminado">Gasto eliminado.</string>
+
+    <!-- Gastos: formulario -->
+    <string name="gasto_titulo_nuevo">Registrar gasto</string>
+    <string name="gasto_titulo_editar">Editar gasto</string>
+    <string name="gasto_fecha">Fecha</string>
+    <string name="gasto_valor">Valor sin IVA</string>
+    <string name="gasto_lugar">Lugar</string>
+    <string name="gasto_descripcion">Descripción</string>
+    <string name="gasto_iva">IVA (19 %%): %1$s</string>
+    <string name="gasto_total">Total con IVA: %1$s</string>
+    <string name="gasto_vista_previa">Vista previa. El valor oficial del IVA lo calcula el servidor.</string>
+    <string name="gasto_guardar">Guardar gasto</string>
+    <string name="gasto_guardado">Gasto guardado. Total: %1$s</string>
+    <string name="error_valor">Escribe un valor válido, sin puntos de miles (ej. 10000).</string>
 </resources>
