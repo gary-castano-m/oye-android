@@ -1,3 +1,66 @@
 <resources>
-    <string name="app_name">Oye</string>
+    <string name="app_name">Oye!</string>
+
+    <!-- Comunes -->
+    <string name="cancelar">Cancelar</string>
+    <string name="conectando">Conectando con el servidor… la primera vez puede tardar hasta un minuto.</string>
+    <string name="proximamente">Esta opción llega en la siguiente fase.</string>
+
+    <!-- Errores de formulario -->
+    <string name="error_campo_obligatorio">Este campo es obligatorio.</string>
+    <string name="error_password_corta">La contraseña debe tener al menos 8 caracteres.</string>
+    <string name="error_password_no_coincide">Las contraseñas no coinciden.</string>
+    <string name="error_email_invalido">Escribe un correo válido.</string>
+    <string name="error_username">Entre 3 y 30 caracteres: letras, números, punto, guion o guion bajo.</string>
+    <string name="error_nombre_corto">El nombre debe tener al menos 3 caracteres.</string>
+
+    <!-- Splash -->
+    <string name="splash_lema">Organiza tus gastos</string>
+    <string name="splash_estado">Despertando el servidor…</string>
+
+    <!-- Login -->
+    <string name="login_titulo">Inicia sesión</string>
+    <string name="login_usuario">Usuario o correo</string>
+    <string name="login_password">Contraseña</string>
+    <string name="login_entrar">Iniciar sesión</string>
+    <string name="login_olvide">¿Olvidaste tu contraseña?</string>
+    <string name="login_crear_cuenta">Crear una cuenta</string>
+    <string name="login_bienvenida">Bienvenido, %1$s</string>
+
+    <!-- Recuperar contraseña -->
+    <string name="recuperar_titulo">Recuperar contraseña</string>
+    <string name="recuperar_mensaje">Escribe el correo de tu cuenta y te enviaremos una contraseña temporal.</string>
+    <string name="recuperar_email">Correo</string>
+    <string name="recuperar_enviar">Enviar</string>
+    <string name="recuperar_enviado">Si el correo está registrado, te llegará una contraseña temporal. Revisa también la carpeta de spam.</string>
+
+    <!-- Registro -->
+    <string name="registro_titulo">Crear cuenta</string>
+    <string name="registro_username">Usuario</string>
+    <string name="registro_nombre">Nombre completo</string>
+    <string name="registro_email">Correo</string>
+    <string name="registro_password">Contraseña</string>
+    <string name="registro_confirmar">Confirmar contraseña</string>
+    <string name="registro_boton">Registrarme</string>
+    <string name="registro_ya_tengo">Ya tengo una cuenta</string>
+    <string name="registro_exitoso">Cuenta creada. Ya puedes iniciar sesión.</string>
+
+    <!-- Menú -->
+    <string name="menu_saludo">Hola, %1$s</string>
+    <string name="menu_rol">Rol: %1$s</string>
+    <string name="menu_seccion_gastos">Gastos</string>
+    <string name="menu_registrar_gasto">Registrar gasto</string>
+    <string name="menu_mis_gastos">Mis gastos</string>
+    <string name="menu_reporte_gastos">Reportes de gastos</string>
+    <string name="menu_seccion_cuenta">Mi cuenta</string>
+    <string name="menu_perfil">Mi perfil</string>
+    <string name="menu_seccion_admin">Administración</string>
+    <string name="menu_usuarios">Usuarios</string>
+    <string name="menu_reporte_usuarios">Reportes de usuarios</string>
+    <string name="menu_cerrar_sesion">Cerrar sesión</string>
+    <string name="menu_cerrar_sesion_pregunta">¿Seguro que quieres cerrar la sesión?</string>
+
+    <string name="rol_admin">Administrador</string>
+    <string name="rol_reviewer">Revisor</string>
+    <string name="rol_member">Miembro</string>
 </resources>
