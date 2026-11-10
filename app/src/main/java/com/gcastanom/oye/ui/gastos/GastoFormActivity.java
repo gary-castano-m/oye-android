@@ -10,6 +10,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.gcastanom.oye.R;
@@ -17,6 +19,7 @@ import com.gcastanom.oye.data.model.Gasto;
 import com.gcastanom.oye.data.model.GastoRequest;
 import com.gcastanom.oye.data.repository.GastoRepository;
 import com.gcastanom.oye.data.repository.Resultado;
+import com.gcastanom.oye.sensors.LocationHelper;
 import com.gcastanom.oye.ui.Formato;
 import com.gcastanom.oye.ui.Pantalla;
 import com.google.android.material.textfield.TextInputEditText;
@@ -32,6 +35,8 @@ import java.util.Locale;
  * - Sin extra: crea con POST /api/gastos.
  * - Con EXTRA_GASTO_ID: carga el gasto con GET /api/gastos/{id} y guarda con PUT.
  * El IVA que se ve aquí es solo una vista previa: el valor oficial lo calcula la API.
+ * Sensor de ubicación: en un gasto nuevo llena el campo Lugar con la dirección actual
+ * (solo si está vacío); el ícono del campo vuelve a pedir la ubicación cuando se quiera.
  */
 public class GastoFormActivity extends AppCompatActivity {
 
@@ -46,7 +51,19 @@ public class GastoFormActivity extends AppCompatActivity {
     private ProgressBar progreso;
 
     private GastoRepository gastoRepository;
+    private LocationHelper locationHelper;
     private String gastoId;   // null = gasto nuevo
+    private boolean reemplazarLugar;   // true cuando el usuario toca el ícono de ubicación
+
+    /** Ventana del sistema que pregunta "¿Permitir que Oye! acceda a tu ubicación?". */
+    private final ActivityResultLauncher<String[]> pedirPermisoUbicacion =
+            registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), respuesta -> {
+                if (locationHelper.tienePermiso()) {
+                    buscarUbicacion();
+                } else {
+                    tilLugar.setHelperText(getString(R.string.ubicacion_sin_permiso));
+                }
+            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +72,7 @@ public class GastoFormActivity extends AppCompatActivity {
         Pantalla.aplicarMargenes(findViewById(R.id.main));
 
         gastoRepository = new GastoRepository(this);
+        locationHelper = new LocationHelper(this);
         gastoId = getIntent().getStringExtra(EXTRA_GASTO_ID);
 
         tilFecha = findViewById(R.id.tilFecha);
@@ -81,10 +99,12 @@ public class GastoFormActivity extends AppCompatActivity {
             @Override public void afterTextChanged(Editable s) { actualizarVistaPrevia(); }
         });
         btnGuardar.setOnClickListener(v -> guardar());
+        tilLugar.setEndIconOnClickListener(v -> usarUbicacion(true));
 
         if (gastoId == null) {
             etFecha.setText(hoy());
             actualizarVistaPrevia();
+            usarUbicacion(false);   // en un gasto nuevo se intenta llenar el lugar solo
         } else {
             cargarGasto();
         }
@@ -172,6 +192,37 @@ public class GastoFormActivity extends AppCompatActivity {
         } else {
             gastoRepository.actualizar(gastoId, datos, alTerminar);
         }
+    }
+
+    // ---------- Sensor de ubicación ----------
+
+    /** @param reemplazar true = el usuario tocó el ícono y quiere cambiar lo escrito. */
+    private void usarUbicacion(boolean reemplazar) {
+        reemplazarLugar = reemplazar;
+        if (locationHelper.tienePermiso()) {
+            buscarUbicacion();
+        } else {
+            pedirPermisoUbicacion.launch(LocationHelper.PERMISOS);
+        }
+    }
+
+    private void buscarUbicacion() {
+        tilLugar.setHelperText(getString(R.string.ubicacion_buscando));
+        locationHelper.obtenerLugar(new LocationHelper.AlObtenerLugar() {
+            @Override
+            public void onLugar(String lugar) {
+                // Igual que en Kodular: no se borra lo que la persona ya escribió.
+                if (reemplazarLugar || texto(etLugar).trim().isEmpty()) {
+                    etLugar.setText(lugar);
+                }
+                tilLugar.setHelperText(getString(R.string.ubicacion_lista));
+            }
+
+            @Override
+            public void onError(String mensaje) {
+                tilLugar.setHelperText(mensaje);
+            }
+        });
     }
 
     // ---------- Vista previa del IVA ----------
