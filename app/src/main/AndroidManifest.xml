@@ -47,6 +47,20 @@
         <activity
             android:name=".ui.gastos.GastoFormActivity"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.perfil.PerfilActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".ui.usuarios.UsuariosActivity" />
+
+        <activity
+            android:name=".ui.usuarios.UsuarioFormActivity"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity android:name=".ui.reportes.ReporteGastosActivity" />
+
+        <activity android:name=".ui.reportes.ReporteUsuariosActivity" />
     </application>
 
 </manifest>

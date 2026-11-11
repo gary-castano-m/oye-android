@@ -1,20 +1,25 @@
 package com.gcastanom.oye.ui.menu;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.gcastanom.oye.R;
 import com.gcastanom.oye.data.model.Usuario;
 import com.gcastanom.oye.session.SessionManager;
+import com.gcastanom.oye.ui.Etiquetas;
 import com.gcastanom.oye.ui.Navegacion;
 import com.gcastanom.oye.ui.Pantalla;
 import com.gcastanom.oye.ui.gastos.GastoFormActivity;
 import com.gcastanom.oye.ui.gastos.GastosListActivity;
+import com.gcastanom.oye.ui.perfil.PerfilActivity;
+import com.gcastanom.oye.ui.reportes.ReporteGastosActivity;
+import com.gcastanom.oye.ui.reportes.ReporteUsuariosActivity;
+import com.gcastanom.oye.ui.usuarios.UsuariosActivity;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 /**
@@ -37,7 +42,14 @@ public class MenuActivity extends AppCompatActivity {
             return;
         }
 
-        configurarBotones();
+        abrirAlTocar(R.id.btnRegistrarGasto, GastoFormActivity.class);
+        abrirAlTocar(R.id.btnMisGastos, GastosListActivity.class);
+        abrirAlTocar(R.id.btnReporteGastos, ReporteGastosActivity.class);
+        abrirAlTocar(R.id.btnPerfil, PerfilActivity.class);
+        abrirAlTocar(R.id.btnUsuarios, UsuariosActivity.class);
+        abrirAlTocar(R.id.btnReporteUsuarios, ReporteUsuariosActivity.class);
+
+        findViewById(R.id.btnCerrarSesion).setOnClickListener(v -> confirmarCierreDeSesion());
     }
 
     @Override
@@ -54,23 +66,12 @@ public class MenuActivity extends AppCompatActivity {
         TextView tvSaludo = findViewById(R.id.tvSaludo);
         TextView tvRol = findViewById(R.id.tvRol);
         tvSaludo.setText(getString(R.string.menu_saludo, usuario.getName()));
-        tvRol.setText(getString(R.string.menu_rol, nombreDelRol(usuario.getRole())));
+        tvRol.setText(getString(R.string.menu_rol, Etiquetas.rol(this, usuario.getRole())));
         findViewById(R.id.seccionAdmin).setVisibility(usuario.esAdmin() ? View.VISIBLE : View.GONE);
     }
 
-    private void configurarBotones() {
-        findViewById(R.id.btnRegistrarGasto).setOnClickListener(
-                v -> startActivity(new Intent(this, GastoFormActivity.class)));
-        findViewById(R.id.btnMisGastos).setOnClickListener(
-                v -> startActivity(new Intent(this, GastosListActivity.class)));
-
-        // Estas opciones se conectan en las siguientes fases.
-        findViewById(R.id.btnReporteGastos).setOnClickListener(v -> proximamente());
-        findViewById(R.id.btnPerfil).setOnClickListener(v -> proximamente());
-        findViewById(R.id.btnUsuarios).setOnClickListener(v -> proximamente());
-        findViewById(R.id.btnReporteUsuarios).setOnClickListener(v -> proximamente());
-
-        findViewById(R.id.btnCerrarSesion).setOnClickListener(v -> confirmarCierreDeSesion());
+    private void abrirAlTocar(int idBoton, Class<? extends Activity> pantalla) {
+        findViewById(idBoton).setOnClickListener(v -> startActivity(new Intent(this, pantalla)));
     }
 
     private void confirmarCierreDeSesion() {
@@ -83,19 +84,5 @@ public class MenuActivity extends AppCompatActivity {
                 })
                 .setNegativeButton(R.string.cancelar, null)
                 .show();
-    }
-
-    private void proximamente() {
-        Toast.makeText(this, R.string.proximamente, Toast.LENGTH_SHORT).show();
-    }
-
-    private String nombreDelRol(String rol) {
-        if (Usuario.ROL_ADMIN.equals(rol)) {
-            return getString(R.string.rol_admin);
-        }
-        if (Usuario.ROL_REVIEWER.equals(rol)) {
-            return getString(R.string.rol_reviewer);
-        }
-        return getString(R.string.rol_member);
     }
 }
