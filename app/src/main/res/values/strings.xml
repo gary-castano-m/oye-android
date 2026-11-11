@@ -94,4 +94,51 @@
     <string name="ubicacion_buscando">Buscando tu ubicación…</string>
     <string name="ubicacion_lista">Lugar tomado de tu ubicación. Puedes corregirlo.</string>
     <string name="ubicacion_sin_permiso">Sin permiso de ubicación: escribe el lugar a mano.</string>
+
+    <!-- Estados de usuario -->
+    <string name="estado_activo">Activo</string>
+    <string name="estado_inactivo">Inactivo</string>
+    <string name="estado_pendiente">Pendiente</string>
+    <string name="estado_bloqueado">Bloqueado</string>
+
+    <!-- Mi perfil -->
+    <string name="perfil_titulo">Mi perfil</string>
+    <string name="perfil_password_ayuda">Para cambiar la contraseña, escribe una nueva. Si la dejas vacía, sigue la misma.</string>
+    <string name="perfil_password_nueva">Nueva contraseña (opcional)</string>
+    <string name="perfil_guardar">Guardar cambios</string>
+    <string name="perfil_guardado">Perfil actualizado.</string>
+
+    <!-- Usuarios (ADMIN) -->
+    <string name="usuarios_resumen">Usuarios registrados: %1$d</string>
+    <string name="usuarios_nuevo">Nuevo usuario</string>
+    <string name="usuarios_eliminar_pregunta">¿Eliminar a %1$s? También se borrarán todos sus gastos.</string>
+    <string name="usuarios_eliminado">Usuario eliminado.</string>
+    <string name="usuarios_no_eliminarse">No puedes eliminar tu propio usuario.</string>
+    <string name="usuario_cuenta">\@%1$s · %2$s</string>
+    <string name="usuario_rol_estado">%1$s · %2$s</string>
+    <string name="usuario_titulo_nuevo">Nuevo usuario</string>
+    <string name="usuario_titulo_editar">Editar usuario</string>
+    <string name="usuario_password_opcional">Nueva contraseña (opcional)</string>
+    <string name="usuario_rol">Rol</string>
+    <string name="usuario_estado">Estado</string>
+    <string name="usuario_guardar">Guardar usuario</string>
+    <string name="usuario_guardado">Usuario guardado.</string>
+    <string name="usuario_es_tu_cuenta">Es tu propia cuenta: el rol y el estado no se pueden cambiar aquí.</string>
+
+    <!-- Reportes -->
+    <string name="reporte_por_fechas">Por fechas</string>
+    <string name="reporte_por_lugar">Por lugar</string>
+    <string name="reporte_por_rol">Por rol</string>
+    <string name="reporte_por_nombre">Por nombre</string>
+    <string name="reporte_desde">Desde</string>
+    <string name="reporte_hasta">Hasta</string>
+    <string name="reporte_lugar_hint">Lugar (ej. exito)</string>
+    <string name="reporte_nombre_hint">Nombre (ej. gary)</string>
+    <string name="reporte_generar">Generar reporte</string>
+    <string name="reporte_cantidad">Gastos encontrados: %1$d</string>
+    <string name="reporte_sin_iva">Total sin IVA: %1$s</string>
+    <string name="reporte_iva">Total IVA: %1$s</string>
+    <string name="reporte_con_iva">Total con IVA: %1$s</string>
+    <string name="reporte_usuarios_cantidad">Usuarios encontrados: %1$d</string>
+    <string name="error_rango_fechas">La fecha final no puede ser anterior a la inicial.</string>
 </resources>
