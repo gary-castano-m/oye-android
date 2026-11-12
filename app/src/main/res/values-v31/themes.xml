@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Android 12 o superior muestra su propia pantalla de arranque con el ícono de la app.
+        Aquí se pinta con el azul de la marca para que empate con nuestro splash.
+    -->
+    <style name="Theme.Oye" parent="Base.Theme.Oye">
+        <item name="android:windowSplashScreenBackground">@color/oye_azul</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+    </style>
+</resources>

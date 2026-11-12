@@ -1,7 +1,42 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Oye" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Tema de la marca Oye!. Siempre claro, para que los colores del logo se vean igual
+        aunque el celular tenga el modo oscuro activado.
+    -->
+    <style name="Base.Theme.Oye" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Azul: botones principales, campos activos, casillas -->
+        <item name="colorPrimary">@color/oye_azul</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/oye_azul_claro</item>
+        <item name="colorOnPrimaryContainer">@color/oye_azul_oscuro</item>
+
+        <!-- Amarillo: botones del menú y acentos -->
+        <item name="colorSecondary">@color/oye_ambar</item>
+        <item name="colorOnSecondary">@color/oye_azul_oscuro</item>
+        <item name="colorSecondaryContainer">@color/oye_ambar_claro</item>
+        <item name="colorOnSecondaryContainer">@color/oye_azul_oscuro</item>
+
+        <!-- Verde: lo que crece -->
+        <item name="colorTertiary">@color/oye_verde</item>
+        <item name="colorOnTertiary">@color/white</item>
+
+        <!-- Fondos y tarjetas -->
+        <item name="android:colorBackground">@color/oye_fondo</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurfaceVariant">#FF40484C</item>
+        <item name="colorSurfaceVariant">#FFDCE4E8</item>
+        <item name="colorOutline">#FF71787C</item>
+        <item name="colorOutlineVariant">#FFC0C8CC</item>
+
+        <!-- Tonos de superficie neutros (la plantilla trae tonos lila).
+             El más alto es el de las tarjetas de totales: amarillo claro de la marca. -->
+        <item name="colorSurfaceContainerLowest">@color/white</item>
+        <item name="colorSurfaceContainerLow">#FFF7F9FA</item>
+        <item name="colorSurfaceContainer">#FFF1F4F6</item>
+        <item name="colorSurfaceContainerHigh">#FFECEFF1</item>
+        <item name="colorSurfaceContainerHighest">@color/oye_ambar_claro</item>
     </style>
+
+    <style name="Theme.Oye" parent="Base.Theme.Oye" />
 </resources>

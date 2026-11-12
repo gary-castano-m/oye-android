@@ -2,4 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Colores de la marca Oye!, tomados del logo y del banner -->
+    <color name="oye_azul">#FF003A52</color>          <!-- azul petróleo: "Oye", fondos y botones -->
+    <color name="oye_azul_oscuro">#FF001E2C</color>
+    <color name="oye_azul_claro">#FFD3E7EF</color>
+    <color name="oye_ambar">#FFF7B500</color>         <!-- amarillo: "!" y "¡Empieza hoy!" -->
+    <color name="oye_ambar_claro">#FFFFF3D1</color>
+    <color name="oye_verde">#FF22A855</color>         <!-- verde: barras y flecha de crecimiento -->
+    <color name="oye_fondo">#FFF5F8FA</color>
+    <color name="oye_texto_suave">#FFB9CFD9</color>   <!-- texto claro sobre el azul -->
 </resources>
