@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Trazo amarillo bajo "¡Empieza hoy!", como en el banner de la marca -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="24dp"
+    android:viewportWidth="200"
+    android:viewportHeight="24">
+    <path
+        android:pathData="M6,18 Q100,2 194,12"
+        android:strokeWidth="5"
+        android:strokeColor="@color/oye_ambar"
+        android:strokeLineCap="round" />
+</vector>

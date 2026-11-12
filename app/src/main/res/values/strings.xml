@@ -15,7 +15,9 @@
     <string name="error_nombre_corto">El nombre debe tener al menos 3 caracteres.</string>
 
     <!-- Splash -->
-    <string name="splash_lema">Organiza tus gastos</string>
+    <string name="lema_linea1">Tu dinero, bajo control.</string>
+    <string name="lema_linea2">¡Empieza hoy!</string>
+    <string name="logo_descripcion">Logo de Oye! Organize Your Expenses</string>
     <string name="splash_estado">Despertando el servidor…</string>
 
     <!-- Login -->
