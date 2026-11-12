@@ -1,30 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Primer plano del ícono adaptativo: globo de diálogo con la marca Oye! -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:aapt="http://schemas.android.com/aapt"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <path android:pathData="M31,63.928c0,0 6.4,-11 12.1,-13.1c7.2,-2.6 26,-1.4 26,-1.4l38.1,38.1L107,108.928l-32,-1L31,63.928z">
-        <aapt:attr name="android:fillColor">
-            <gradient
-                android:endX="85.84757"
-                android:endY="92.4963"
-                android:startX="42.9492"
-                android:startY="49.59793"
-                android:type="linear">
-                <item
-                    android:color="#44000000"
-                    android:offset="0.0" />
-                <item
-                    android:color="#00000000"
-                    android:offset="1.0" />
-            </gradient>
-        </aapt:attr>
-    </path>
     <path
         android:fillColor="#FFFFFF"
-        android:fillType="nonZero"
-        android:pathData="M65.3,45.828l3.8,-6.6c0.2,-0.4 0.1,-0.9 -0.3,-1.1c-0.4,-0.2 -0.9,-0.1 -1.1,0.3l-3.9,6.7c-6.3,-2.8 -13.4,-2.8 -19.7,0l-3.9,-6.7c-0.2,-0.4 -0.7,-0.5 -1.1,-0.3C38.8,38.328 38.7,38.828 38.9,39.228l3.8,6.6C36.2,49.428 31.7,56.028 31,63.928h46C76.3,56.028 71.8,49.428 65.3,45.828zM43.4,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2c-0.3,-0.7 -0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C45.3,56.528 44.5,57.328 43.4,57.328L43.4,57.328zM64.6,57.328c-0.8,0 -1.5,-0.5 -1.8,-1.2s-0.1,-1.5 0.4,-2.1c0.5,-0.5 1.4,-0.7 2.1,-0.4c0.7,0.3 1.2,1 1.2,1.8C66.5,56.528 65.6,57.328 64.6,57.328L64.6,57.328z"
-        android:strokeWidth="1"
-        android:strokeColor="#00000000" />
+        android:pathData="M36,34h36a12,12 0 0,1 12,12v14a12,12 0 0,1 -12,12h-36a12,12 0 0,1 -12,-12v-14a12,12 0 0,1 12,-12z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,70L35,81L48,70z" />
+    <path
+        android:fillColor="#003A52"
+        android:fillType="evenOdd"
+        android:pathData="M29.60,53.05a7.25,7.25 0 1,0 14.50,0a7.25,7.25 0 1,0 -14.50,0zM32.85,53.05a4.00,4.00 0 1,0 8.00,0a4.00,4.00 0 1,0 -8.00,0z" />
+    <path
+        android:fillColor="#F7B500"
+        android:pathData="M38.73,46.05A7.25,7.25 0 0,1 43.66,50.57L40.61,51.68A4.00,4.00 0 0,0 37.89,49.19z" />
+    <path
+        android:fillColor="#22A855"
+        android:pathData="M34.25,55.65h1.3v-2.6h-1.3z" />
+    <path
+        android:fillColor="#22A855"
+        android:pathData="M36.00,55.65h1.3v-3.8h-1.3z" />
+    <path
+        android:fillColor="#F7B500"
+        android:pathData="M37.75,55.65h1.3v-5.0h-1.3z" />
+    <path
+        android:fillColor="#003A52"
+        android:pathData="M57.66 48.86 50.48 65.73H46.71L49.33 59.91L44.68 48.86H48.6L51.24 56.02L53.86 48.86Z" />
+    <path
+        android:fillColor="#003A52"
+        android:pathData="M69.25 55.42H61.31Q61.4 56.49 62 57.05Q62.61 57.61 63.49 57.61Q64.8 57.61 65.31 56.51H69.04Q68.76 57.63 68.01 58.54Q67.26 59.44 66.13 59.95Q65 60.46 63.61 60.46Q61.93 60.46 60.62 59.75Q59.31 59.03 58.57 57.7Q57.83 56.36 57.83 54.58Q57.83 52.8 58.56 51.46Q59.29 50.13 60.6 49.41Q61.91 48.7 63.61 48.7Q65.27 48.7 66.56 49.39Q67.85 50.09 68.58 51.38Q69.31 52.67 69.31 54.4Q69.31 54.89 69.25 55.42ZM65.72 53.47Q65.72 52.57 65.11 52.04Q64.49 51.51 63.57 51.51Q62.69 51.51 62.08 52.02Q61.48 52.53 61.34 53.47Z" />
+    <path
+        android:fillColor="#F7B500"
+        android:pathData="M75.57 45.4 75.16 55.22H72.19L71.77 45.4ZM71.63 58.58Q71.63 57.76 72.22 57.2Q72.8 56.65 73.72 56.65Q74.62 56.65 75.21 57.2Q75.79 57.76 75.79 58.58Q75.79 59.38 75.21 59.92Q74.62 60.46 73.72 60.46Q72.8 60.46 72.22 59.92Q71.63 59.38 71.63 58.58Z" />
 </vector>
