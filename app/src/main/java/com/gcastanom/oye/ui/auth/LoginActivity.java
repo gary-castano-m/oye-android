@@ -47,7 +47,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Pantalla.aplicarMargenes(findViewById(R.id.main));
+        Pantalla.aplicarMargenesConEncabezado(findViewById(R.id.main),
+                findViewById(R.id.encabezado), findViewById(R.id.contenido));
+        Pantalla.iconosClaros(this);
 
         authRepository = new AuthRepository(this);
         sesion = new SessionManager(this);
