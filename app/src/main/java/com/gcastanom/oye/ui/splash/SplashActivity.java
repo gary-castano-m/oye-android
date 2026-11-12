@@ -29,6 +29,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         Pantalla.aplicarMargenes(findViewById(R.id.main));
+        Pantalla.iconosClaros(this);
 
         authRepository = new AuthRepository(this);
         sesion = new SessionManager(this);

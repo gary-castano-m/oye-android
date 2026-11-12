@@ -12,13 +12,22 @@
         android:orientation="vertical"
         android:padding="24dp">
 
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/logo_descripcion"
+            android:src="@drawable/logo_oye" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:fontFamily="@font/poppins_bold"
             android:text="@string/registro_titulo"
-            android:textSize="28sp"
-            android:textStyle="bold" />
+            android:textColor="@color/oye_azul"
+            android:textSize="26sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilUsername"

@@ -34,7 +34,9 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        Pantalla.aplicarMargenes(findViewById(R.id.main));
+        Pantalla.aplicarMargenesConEncabezado(findViewById(R.id.main),
+                findViewById(R.id.encabezado), findViewById(R.id.contenido));
+        Pantalla.iconosClaros(this);
 
         sesion = new SessionManager(this);
         if (!sesion.haySesion()) {
