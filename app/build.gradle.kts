@@ -20,9 +20,10 @@ android {
 
     buildTypes {
         release {
+            // R8 desactivado: con la optimización por paquetes, R8 renombraba clases
+            // de Kotlin que usa OkHttp y la app se cerraba al abrir.
             optimization {
-                enable = true
-                packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
+                enable = false
             }
         }
     }
