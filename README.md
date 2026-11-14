@@ -27,11 +27,24 @@ para recargar la lista al agitar el celular.
 | API REST en producción | https://oye-api-j5l4.onrender.com |
 | Documentación de la API (Swagger) | https://oye-api-j5l4.onrender.com/swagger-ui/index.html |
 | Repositorio del backend | https://github.com/gary-castano-m/users-management-spring-boot-hexagonal-ddd |
-| Video de sustentación | _ENLACE_DEL_VIDEO_ |
+| Videos de sustentación | [4 videos en YouTube](#videos-de-sustentación) |
 
 > La API corre en el plan gratuito de Render. Si lleva un rato sin uso, la primera petición tarda
 > hasta un minuto mientras el servidor despierta. La app lo tiene en cuenta: el splash hace esa
 > primera petición y todas las peticiones esperan hasta 70 segundos.
+
+---
+
+## Videos de sustentación
+
+La sustentación está dividida en 4 videos. Se recomienda verlos en orden: el primero da el panorama, el segundo y el tercero explican el código, y el último muestra la app funcionando completa.
+
+| # | Video | Enlace |
+|:-:|---|---|
+| 1 | De Corte 2 a Corte 3: introducción | [Ver video 1](https://youtu.be/w21GIs-2N-w) |
+| 2 | La arquitectura: cómo la app habla con la API | [Ver video 2](https://youtu.be/YPwApMlSA6c) |
+| 3 | Los dos sensores: ubicación y acelerómetro | [Ver video 3](https://youtu.be/JRGOM9kCCOw) |
+| 4 | La app en acción: gastos, reportes y administración | [Ver video 4](https://youtu.be/lRLvMbwfrvs) |
 
 ---
 
@@ -247,6 +260,8 @@ Cada funcionalidad se hizo en su propia rama y entró a `main` por Pull Request.
 | #5 | `feature/perfil-usuarios-reportes` | Mi perfil, CRUD de usuarios y los cuatro reportes |
 | #6 | `feature/identidad-visual` | Ícono, colores, logo y lema de la marca |
 | #7 | `docs/readme-apk` | Este README y el APK |
+| #8 | `fix/apk-sin-r8` | Corrección del APK de release: se desactivó la optimización de R8 que cerraba la app al abrir |
+| #9 | `docs/enlace-videos` | Enlaces de los videos de sustentación |
 
 ---
 
